@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background particles -->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">Aurorista</h1>
+            <p class="subtitle">Curated Collection of Extraordinary Moments</p>
+        </header>
+
+        <!-- Slider container -->
+        <div class="slider-wrapper">
+            <div class="slider-container" id="sliderContainer">
+                <!-- Image container -->
+                <div class="image-container">
+                    <img id="currentImage" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Image" class="slider-image">
+                    <div class="image-overlay">
+                        <div class="image-info">
+                            <h3 id="imageTitle">Mountain Serenity</h3>
+                            <p id="imageDescription">Breathtaking alpine landscape at golden hour</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation buttons -->
+                <button class="nav-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Progress bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Thumbnail navigation -->
+            <div class="thumbnail-container" id="thumbnailContainer">
+                <!-- Thumbnails will be dynamically generated -->
+            </div>
+
+            <!-- Slide indicators -->
+            <div class="indicators" id="indicators">
+                <!-- Indicators will be dynamically generated -->
+            </div>
+        </div>
+
+        <!-- Control panel -->
+        <div class="control-panel">
+            <button class="control-btn" id="playPauseBtn">
+                <i class="fas fa-pause"></i>
+                <span>Pause</span>
+            </button>
+            <button class="control-btn" id="fullscreenBtn">
+                <i class="fas fa-expand"></i>
+                <span>Fullscreen</span>
+            </button>
+            <div class="speed-control">
+                <label for="speedRange">Speed:</label>
+                <input type="range" id="speedRange" min="1" max="10" value="3" class="speed-slider">
+                <span id="speedValue">3s</span>
+            </div>
+        </div>
+
+        <!-- Image counter -->
+        <div class="image-counter">
+            <span id="currentIndex">1</span> / <span id="totalImages">5</span>
+        </div>
+    </div>
+
+    <!-- Loading spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Keyboard shortcuts info -->
+    <div class="shortcuts-info">
+        <div class="shortcuts-toggle" id="shortcutsToggle">
+            <i class="fas fa-keyboard"></i>
+        </div>
+        <div class="shortcuts-panel" id="shortcutsPanel">
+            <h4>Keyboard Shortcuts</h4>
+            <div class="shortcut">
+                <kbd>←</kbd> Previous image
+            </div>
+            <div class="shortcut">
+                <kbd>→</kbd> Next image
+            </div>
+            <div class="shortcut">
+                <kbd>Space</kbd> Play/Pause
+            </div>
+            <div class="shortcut">
+                <kbd>F</kbd> Fullscreen
+            </div>
+            <div class="shortcut">
+                <kbd>Esc</kbd> Exit fullscreen
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
